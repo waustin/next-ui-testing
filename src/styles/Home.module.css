@@ -1,7 +1,9 @@
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 6rem;
+.container {
+ padding: 4rem 8vw;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+ background-color: aquamarine;
 }
