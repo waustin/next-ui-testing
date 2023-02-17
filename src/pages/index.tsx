@@ -4,6 +4,7 @@ import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import { Button } from '@mui/material'
 import { Switch } from '@mui/material'
+import { Box } from '@mui/material'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -30,6 +31,17 @@ export default function Home() {
         <Switch {...label} defaultChecked />
         <Switch {...label} />
         <Switch {...label} disabled defaultChecked />
+
+        <Box
+          className={styles.box}
+          sx={{
+            backgroundColor: "primary.dark",
+            "&:hover": {
+              backgroundColor: "primary.main",
+              opacity: [0.9, 0.8, 0.7],
+            },
+          }}
+        />
       </main>
     </>
   );
