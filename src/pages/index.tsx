@@ -5,10 +5,16 @@ import styles from '@/styles/Home.module.css'
 import { Button } from '@mui/material'
 import { Switch } from '@mui/material'
 import { Box } from '@mui/material'
+import Drawer from "@mui/material/Drawer";
+
+import AppBar from "../components/AppBar/AppBar";
+
 
 const inter = Inter({ subsets: ['latin'] })
 
 const label = { inputProps: { "aria-label": "Switch demo" } };
+
+const drawerWidth = 200;
 
 export default function Home() {
   return (
@@ -21,28 +27,52 @@ export default function Home() {
       </Head>
 
       <main className={styles.container}>
+        <AppBar
+          position="fixed"
+          sx={{
+            width: `calc(100% - ${drawerWidth}px)`,
+            ml: `${drawerWidth}px`,
+          }}
+        />
+        <Drawer
+          sx={{
+            width: drawerWidth,
+            flexShrink: 0,
+            "& .MuiDrawer-paper": {
+              width: drawerWidth,
+              boxSizing: "border-box",
+            },
+          }}
+          variant="permanent"
+          anchor="left"
+        ></Drawer>
+
         <Button sx={{ marginBottom: 2 }} variant="contained">
           Button
         </Button>
-
-        <div>
-          <span>With default Theme:</span>
-        </div>
-        <Switch {...label} defaultChecked />
-        <Switch {...label} />
-        <Switch {...label} disabled defaultChecked />
-
-        <Box
-          className={styles.box}
-          sx={{
-            backgroundColor: "primary.dark",
-            "&:hover": {
-              backgroundColor: "primary.main",
-              opacity: [0.9, 0.8, 0.7],
-            },
-          }}
-        />
       </main>
     </>
   );
 }
+
+
+/* Old test shit
+   <div>
+            <span>With default Theme:</span>
+          </div>
+          <Switch {...label} defaultChecked />
+          <Switch {...label} />
+          <Switch {...label} disabled defaultChecked />
+
+          <Box
+            className={styles.box}
+            sx={{
+              backgroundColor: "primary.dark",
+              "&:hover": {
+                backgroundColor: "primary.main",
+                opacity: [0.9, 0.8, 0.7],
+              },
+            }}
+          />
+
+ */
