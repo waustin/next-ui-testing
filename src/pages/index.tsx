@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
-import { Button } from '@mui/material'
+import { Button, Divider, List, ListItem, ListItemText, Toolbar, Typography } from '@mui/material'
 import { Switch } from '@mui/material'
 import { Box } from '@mui/material'
 import Drawer from "@mui/material/Drawer";
@@ -13,6 +13,13 @@ import AppBar from "../components/AppBar/AppBar";
 const inter = Inter({ subsets: ['latin'] })
 
 const label = { inputProps: { "aria-label": "Switch demo" } };
+
+const mainMenuItems = [
+  'Iris',
+  'Digital Vision',
+  'Cockpit',
+  'Settings',
+]
 
 const drawerWidth = 200;
 
@@ -45,7 +52,21 @@ export default function Home() {
           }}
           variant="permanent"
           anchor="left"
-        ></Drawer>
+        >
+          <Toolbar>
+            <Typography variant="body" noWrap component="div">
+              <strong>Roots Platform</strong>
+            </Typography>
+          </Toolbar>
+          <Divider />
+          <List>
+            {mainMenuItems.map((text, index) => (
+              <ListItem key={text}>
+                <ListItemText primary={text} />
+              </ListItem>
+            ))}
+          </List>
+        </Drawer>
 
         <Button sx={{ marginBottom: 2 }} variant="contained">
           Button
