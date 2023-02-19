@@ -2,10 +2,13 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
-import { Button, Divider, List, ListItem, ListItemText, Toolbar, Typography } from '@mui/material'
-import { Switch } from '@mui/material'
-import { Box } from '@mui/material'
-import Drawer from "@mui/material/Drawer";
+import { Button, Typography } from '@mui/material'
+
+import SideMenu from "../components/SideMenu/SideMenu.js";
+
+
+
+import Link from 'next/link';
 
 import AppBar from "../components/AppBar/AppBar";
 
@@ -14,14 +17,9 @@ const inter = Inter({ subsets: ['latin'] })
 
 const label = { inputProps: { "aria-label": "Switch demo" } };
 
-const mainMenuItems = [
-  'Iris',
-  'Digital Vision',
-  'Cockpit',
-  'Settings',
-]
 
-const drawerWidth = 200;
+
+
 
 export default function Home() {
   return (
@@ -34,6 +32,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.container}>
+        { /*** 
         <AppBar
           position="fixed"
           sx={{
@@ -41,32 +40,9 @@ export default function Home() {
             ml: `${drawerWidth}px`,
           }}
         />
-        <Drawer
-          sx={{
-            width: drawerWidth,
-            flexShrink: 0,
-            "& .MuiDrawer-paper": {
-              width: drawerWidth,
-              boxSizing: "border-box",
-            },
-          }}
-          variant="permanent"
-          anchor="left"
-        >
-          <Toolbar>
-            <Typography variant="body" noWrap component="div">
-              <strong>Roots Platform</strong>
-            </Typography>
-          </Toolbar>
-          <Divider />
-          <List>
-            {mainMenuItems.map((text, index) => (
-              <ListItem key={text}>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
-        </Drawer>
+        **/ }
+
+        <SideMenu />
 
         <Button sx={{ marginBottom: 2 }} variant="contained">
           Button
