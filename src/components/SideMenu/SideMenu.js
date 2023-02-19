@@ -23,7 +23,7 @@ const drawerWidth = 200;
 const mainMenuItems = [
   { text: "Home", url: "/", icon: <HomeIcon /> },
   { text: "Iris", url: "/iris", icon: <CameraIcon /> },
-  { text: "Digital Vision", url: "/dv", icon: <VisibilityIcon /> },
+  { text: "Digital Vision", url: "/digital-vision", icon: <VisibilityIcon /> },
   { text: "Cockpit", url: "/cockpit", icon: <DashboardIcon /> },
   { text: "Settings", url: "/settings", icon: <SettingsIcon /> },
 ];

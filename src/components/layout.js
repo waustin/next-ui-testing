@@ -1,4 +1,5 @@
 import React from "react";
+import SideMenu from "../components/SideMenu/SideMenu.js";
 
 function Copyright(props) {
   return (
@@ -12,8 +13,9 @@ function Copyright(props) {
 export default function Layout({ children }) {
   return (
     <>
-      <main>{children}</main>
-      <Copyright/>
+      <SideMenu />
+      <main className="page-container">{children}</main>
+      <Copyright />
     </>
   );
 }

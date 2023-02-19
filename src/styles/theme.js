@@ -1,11 +1,11 @@
 import { createTheme } from "@mui/material/styles";
 
-import palette from "./base/_variables.module.scss";
+import vars from "./base/_variables.module.scss";
 
 export const theme = createTheme({
   palette: {
     primary: {
-      main: palette.primary,
+      main: vars.colorPrimary,
     },
   },
 });

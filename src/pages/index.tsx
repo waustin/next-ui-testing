@@ -4,7 +4,7 @@ import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import { Button, Typography } from '@mui/material'
 
-import SideMenu from "../components/SideMenu/SideMenu.js";
+
 
 
 
@@ -31,7 +31,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.container}>
+      <div>
         { /*** 
         <AppBar
           position="fixed"
@@ -41,13 +41,11 @@ export default function Home() {
           }}
         />
         **/ }
-
-        <SideMenu />
-
+        <h1>Home Page</h1>
         <Button sx={{ marginBottom: 2 }} variant="contained">
           Button
         </Button>
-      </main>
+      </div>
     </>
   );
 }
